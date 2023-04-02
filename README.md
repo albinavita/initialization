@@ -37,7 +37,7 @@
 '''
 
 public class Car {
-  // 
+  
     private String color;
     private String brand;
 
