@@ -33,7 +33,6 @@
 -	логические значения - false;  
 -	ссылочные значения - null   
 Переменные экземпляра имеют значения по умолчанию. Для чисел по умолчанию равно 0, для логических – false, для ссылок на объект – null. Значения могут быть присвоены при объявлении или в конструкторе.  
-
 '''
 
 public class Car {
@@ -60,9 +59,42 @@ public class Car {
        car.print();
     }
 }
-
 '''
 Вывод на экран:  
 BMW - red
+
+** Переменные класса **
+Переменные класса по другому называют **статическими переменными**.  
+Объявляется такая переменная с ключевым словом **static**  
+'''
+public class Car {
+    public static int count;
+    private String color;
+    private String brand;
+
+    public Car(String brand) {
+        this.brand = brand;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void print(){
+        System.out.println(String.format("Марака (%s) - цвет (%s) - количество (%d)", brand, color, count) );
+    }
+}
+'''
+public class Main {
+
+    public static void main(String[] args) {
+        Car.count = 10;
+        Car car = new Car("Lada");
+        car.setColor("green");
+        car.print();
+    }
+}
+'''
+
 
 
